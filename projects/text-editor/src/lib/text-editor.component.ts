@@ -19,7 +19,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   (keypress)="onKeyPress($event)" 
   contenteditable="true" 
   class="editable-text-view">
-  <span style="font-weight:'bold'">t</span><span>e</span><span>s</span><span>t</span>
+    
   </p>
   </div>
   `,
