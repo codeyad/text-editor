@@ -118,6 +118,46 @@
           }
         }
       }
+    },
+    "text-editor": {
+      "projectType": "library",
+      "root": "projects/text-editor",
+      "sourceRoot": "projects/text-editor/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/text-editor/tsconfig.lib.json",
+            "project": "projects/text-editor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/text-editor/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/text-editor/src/test.ts",
+            "tsConfig": "projects/text-editor/tsconfig.spec.json",
+            "karmaConfig": "projects/text-editor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/text-editor/tsconfig.lib.json",
+              "projects/text-editor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "app-library"
